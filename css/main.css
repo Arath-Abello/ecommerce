@@ -23,6 +23,23 @@ body {
 }
 .header__navigation {
   width: 175px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+@media (min-width: 1115px) {
+  .header__navigation {
+    width: 590px;
+    border: 1px solid red;
+  }
+}
+.header__menu:hover {
+  cursor: pointer;
+}
+@media (min-width: 1115px) {
+  .header__menu {
+    display: none;
+  }
 }
 
 .navbar {
