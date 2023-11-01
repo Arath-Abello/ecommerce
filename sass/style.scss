@@ -1,0 +1,16 @@
+@use './initial'; //importar archivo
+@use './variables';
+@use './header';
+@use './navbar';
+@use './modal-navbar';
+
+.main-container {
+    width: 375px;
+    border: 1px solid black;
+    margin-left: auto;
+    margin-right: auto;
+
+    @media (min-width: 1115px) {
+        width: 1115px;
+    }
+}
