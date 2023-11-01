@@ -8,3 +8,19 @@
     height: 100%;
     display: none;
 }
+
+// creamos variables en los parentesis
+// y se lo pasamos a las propiedades css para que tomen valores
+@mixin image-btn($top, $left){
+    background-color: variables.$White;
+    width: 40px;
+    height: 40px;
+    padding: 12px;
+    border-radius: 50%;
+    position: absolute;
+    top: $top;
+    left: $left;
+    &:hover{
+        cursor: pointer;
+    }
+}
