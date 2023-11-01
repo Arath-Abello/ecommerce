@@ -15,7 +15,6 @@
         padding-left: 40px;
     }
     &__items{
-        border: 1px solid red;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -27,5 +26,8 @@
         color: variables.$Very-dark-blue;
         font-weight: 700;
         font-size: 1.1rem;
+    }
+    &__close:hover{
+        cursor: pointer;
     }
 }
