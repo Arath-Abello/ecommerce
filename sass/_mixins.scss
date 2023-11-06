@@ -7,6 +7,7 @@
     width: 100%;
     height: 100%;
     display: none;
+    z-index: 1;
 }
 
 // creamos variables en los parentesis
@@ -22,5 +23,34 @@
     left: $left;
     &:hover{
         cursor: pointer;
+    }
+}
+
+@mixin changeNumber($pv, $ph){
+    width: 25px;
+    height: 100%;
+    padding: $pv $ph;
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+@mixin button{
+    background-color: variables.$Orange;
+    width: 100%;
+    height: 57px;
+    border-radius: 8px;
+    border: none;
+    color: variables.$White;
+    font-size: .9rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    transition: 300ms;
+    &:hover{
+        cursor: pointer;
+        opacity: .5;
     }
 }

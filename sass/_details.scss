@@ -1,0 +1,53 @@
+@use './mixins';
+@use './variables';
+
+.details{
+    border: 1px solid red;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    &__header-title-company{
+        color: variables.$Orange;
+        text-transform: uppercase;
+        font-size: .8rem;
+        letter-spacing: 1px;
+        margin-top: 1.5em;
+    }
+    &__header-subtitle{
+        font-size: 1.7rem;
+    }
+    &__description{
+        font-size: .94rem;
+        color: variables.$Dark-grayish-blue;
+        line-height: 1.5em;
+    }
+    &__prices{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1.5em;
+    }
+    &__now{
+        font-size: 1.8rem;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        margin: 0;
+    }
+    &__discount{
+        font-size: .5rem;
+        background-color: variables.$Pale-orange;
+        color: variables.$Orange;
+        padding: 4px;
+        border-radius: 4px;
+    }
+    &__before{
+        margin: 0;
+        font-weight: 700;
+        color: variables.$Dark-grayish-blue;
+        text-decoration: line-through;
+    }
+    &__button{
+        @include mixins.button;
+    }
+}

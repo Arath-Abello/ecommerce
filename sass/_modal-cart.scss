@@ -1,0 +1,19 @@
+@use './variables';
+@use './mixins';
+
+.cart-modal{
+    width: 360px;
+    height: 260px;
+    border-radius: 8px;
+    box-shadow: 3px 3px 10px;
+    position: absolute;
+    top: 75px;
+    left: 6px;
+    background-color: variables.$White;
+    &__title{
+        font-weight: 700;
+        padding: 24px;
+        margin: 0;
+        border-bottom: 1px solid variables.$Grayish-blue;
+    }
+}
