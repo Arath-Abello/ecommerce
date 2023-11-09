@@ -2,10 +2,9 @@
 @use './mixins';
 .gallery{
     &__image-container{
-        border: 1px solid blue;
         height: 300px;
         width: 100%;
-        background-image: url('../images/image-product-1-thumbnail.jpg');
+        background-image: url('../images/image-product-1.jpg');
         background-size: cover;
         background-position-y: -35px;
     }
@@ -15,10 +14,28 @@
     &__next{
         @include mixins.image-btn(190px, 320px);
     }
-    &__thumbnail{
+    &__thumbnails{
         display: none;
-        @media (min-width: 1115px){
-            display: block;
+        @media (width >= 1115px){
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+    @media (width >= 1115px){
+        width: 446px;
+        &__image-container{
+            border-radius: 1em;
+            height: 446px;
+            margin-bottom: 2em;
+            background-position-y: 0;
+        }
+        &__thumbnail{
+            width: 90px;
+            border-radius: 1em;
+            &:hover{
+                cursor: pointer;
+                border: 2px solid variables.$Orange;
+            }
         }
     }
 }

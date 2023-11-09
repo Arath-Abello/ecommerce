@@ -14,7 +14,14 @@
     margin-left: auto;
     margin-right: auto;
     position: relative;
-    @media (min-width: 1115px) {
+    @media (width >= 1115px) {
         width: 1115px;
+    }
+}
+.content{
+    @media (width >= 1115px){
+        display: flex;
+        padding: 5.625em 3.125em;
+        gap: 7.75em;
     }
 }

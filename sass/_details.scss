@@ -2,7 +2,6 @@
 @use './variables';
 
 .details{
-    border: 1px solid red;
     padding-left: 1.5em;
     padding-right: 1.5em;
     &__header-title-company{
@@ -49,5 +48,22 @@
     }
     &__button{
         @include mixins.button;
+    }
+    @media (width >= 1115px){
+        width: 446px;
+        padding-top: 3.75em;
+        &__header-subtitle{
+            font-size: 2.7rem;
+        }
+        &__description{
+            font-size: .9rem;
+        }
+        &__prices{
+            display: block;
+        }
+        &__product-quantity{
+            display: flex;
+            gap: 2em;
+        }
     }
 }
