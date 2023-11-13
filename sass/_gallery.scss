@@ -9,16 +9,24 @@
         background-position-y: -35px;
     }
     &__previous{
-       @include mixins.image-btn(190px, 15px);
+       @include mixins.image-btn(190px, 15px, false);
     }
     &__next{
-        @include mixins.image-btn(190px, 320px);
+        @include mixins.image-btn(190px, 320px, false);
     }
     &__thumbnails{
         display: none;
         @media (width >= 1115px){
             display: flex;
             justify-content: space-between;
+        }
+    }
+    &__thumbnail{
+        width: 90px;
+        border-radius: 1em;
+        &:hover{
+            cursor: pointer;
+            border: 2px solid variables.$Orange;
         }
     }
     @media (width >= 1115px){
@@ -29,13 +37,6 @@
             margin-bottom: 2em;
             background-position-y: 0;
         }
-        &__thumbnail{
-            width: 90px;
-            border-radius: 1em;
-            &:hover{
-                cursor: pointer;
-                border: 2px solid variables.$Orange;
-            }
-        }
+        
     }
 }

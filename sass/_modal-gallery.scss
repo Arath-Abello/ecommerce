@@ -1,0 +1,64 @@
+@use './variables';
+@use './mixins';
+
+.modal-gallery {
+    width: 550px;
+    
+    &__background {
+        @include mixins.modal-background;
+        display: none;
+        // display: grid;
+        place-content: center;
+    }
+
+    &__close-container{
+        text-align: right;
+        height: 30px;
+    }
+    &__close {
+        width: 16px;
+        &:hover{
+            cursor: pointer;
+            // content de css que nos permite cambiar el contenido en este caso al hacer hover pues nos cambia la imagen
+            content: url('../images/icon-close-orange.svg');
+        }
+    }
+
+    &__image-container {
+        background-image: url('../images/image-product-1.jpg');
+        background-size: cover;
+        height: 446px;
+        border-radius: 1em;
+        margin-bottom: 2em;
+        position: relative;
+    }
+
+    &__thumbnails {
+
+        display: flex;
+        justify-content: space-between;
+        width: 450px;
+        margin-left: auto;
+        margin-right: auto;
+
+    }
+
+    &__thumbnail {
+        width: 90px;
+        border-radius: 1em;
+
+        &:hover {
+            cursor: pointer;
+            border: 2px solid variables.$Orange;
+        }
+    }
+
+    &__previous {
+        @include mixins.image-btn(190px, -15px, true);
+    }
+
+    &__next {
+        @include mixins.image-btn(190px, 520px, true);
+    }
+
+}

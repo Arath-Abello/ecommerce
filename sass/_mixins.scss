@@ -12,7 +12,7 @@
 
 // creamos variables en los parentesis
 // y se lo pasamos a las propiedades css para que tomen valores
-@mixin image-btn($top, $left){
+@mixin image-btn($top, $left, $showDesktop){
     background-color: variables.$White;
     width: 40px;
     height: 40px;
@@ -25,7 +25,11 @@
         cursor: pointer;
     }
     @media (width >= 1115px){
-        display: none;
+        @if ($showDesktop == true){
+            display: block;
+        }@else{
+            display: none;
+        }
     }
 }
 
