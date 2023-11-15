@@ -25,3 +25,22 @@ minusBtn.addEventListener('click', ()=>{
 
 //* SEGUNDA PARTE:
 // * Agregar el total de productos al carrito cuando apretamos "add to cart"
+// como es un elemento que no cambia su valor pues haremos una constante
+
+const addToCartBtn = document.querySelector('.details__button');
+let cartNotification = document.querySelector('.header__cart--notification');
+
+// cuando se hace click en el boton
+addToCartBtn.addEventListener('click', ()=>{
+    // creamos una varable de ultimo valor y convertimos el texto del html de cartNotification a un numero con parseint
+    let lastValue = parseInt(cartNotification.innerText);
+    // sumamos el valor por defecto que esta en el html con el nuevo valor de userInputNumber
+    lastValue = lastValue + userInputNumber;
+
+    // entonces que modifique el texto por el valor de la variable userInputNumber
+    cartNotification.innerText = lastValue;
+    cartNotification.style.display = 'block';
+});
+
+// * TERCERA PARTE
+// * Mostrar el modal con el detale del producto
