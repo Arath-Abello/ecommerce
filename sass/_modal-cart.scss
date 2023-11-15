@@ -50,3 +50,10 @@
 .show{
     display: block;
 }
+.cart-empty{
+    font-weight: 700;
+    color: variables.$black-modal;
+    text-align: center;
+    margin-top: 1.875em;
+}
+//TODO: ver video 1:10:35 

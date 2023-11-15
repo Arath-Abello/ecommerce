@@ -406,6 +406,13 @@ body {
   display: block;
 }
 
+.cart-empty {
+  font-weight: 700;
+  color: hsla(0, 0%, 0%, 0.5);
+  text-align: center;
+  margin-top: 1.875em;
+}
+
 .modal-gallery {
   width: 550px;
 }
