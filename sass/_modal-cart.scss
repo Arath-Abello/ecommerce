@@ -46,3 +46,7 @@
         @include mixins.button;
     }
 }
+// una nueva clase por javascript para que cuando el usuario aprete otra vez pues que se cierre o se abra
+.show{
+    display: block;
+}

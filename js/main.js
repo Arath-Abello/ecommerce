@@ -29,18 +29,29 @@ minusBtn.addEventListener('click', ()=>{
 
 const addToCartBtn = document.querySelector('.details__button');
 let cartNotification = document.querySelector('.header__cart--notification');
+// creamos una varable de ultimo valor y convertimos el texto del html de cartNotification a un numero con parseint
+let lastValue = parseInt(cartNotification.innerText);
 
 // cuando se hace click en el boton
 addToCartBtn.addEventListener('click', ()=>{
-    // creamos una varable de ultimo valor y convertimos el texto del html de cartNotification a un numero con parseint
-    let lastValue = parseInt(cartNotification.innerText);
     // sumamos el valor por defecto que esta en el html con el nuevo valor de userInputNumber
     lastValue = lastValue + userInputNumber;
 
     // entonces que modifique el texto por el valor de la variable userInputNumber
     cartNotification.innerText = lastValue;
     cartNotification.style.display = 'block';
+    priceModal.innerHTML = `$125.00 x${lastValue} <span>${lastValue*125}.00</span>`;
+
 });
 
 // * TERCERA PARTE
 // * Mostrar el modal con el detale del producto
+const cartIconBtn = document.querySelector('.header__cart');
+const cartModal = document.querySelector('.cart-modal');
+let priceModal = document.querySelector('.cart-modal__price');
+
+cartIconBtn.addEventListener('click', ()=>{
+    // classList: analizar las clases que tiene
+    // toggle(): nos pregunta si la clase existe o no? si existiera pues la borra y si no existe pues la crea
+    cartModal.classList.toggle('show');
+});

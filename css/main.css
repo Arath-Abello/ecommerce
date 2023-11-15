@@ -402,6 +402,10 @@ body {
   opacity: 0.5;
 }
 
+.show {
+  display: block;
+}
+
 .modal-gallery {
   width: 550px;
 }
