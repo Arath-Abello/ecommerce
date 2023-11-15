@@ -22,3 +22,6 @@ minusBtn.addEventListener('click', ()=>{
         // accedemos al valor del input y se le asigna el nuevo valor de userInputNumber
     userInput.value = userInputNumber;
 });
+
+//* SEGUNDA PARTE:
+// * Agregar el total de productos al carrito cuando apretamos "add to cart"
