@@ -97,6 +97,17 @@ previousGalleryBtn.addEventListener('click', ()=>{
     changePreviousImg(imgsContainer);
 });
 
+// mostrar el modal de imagenes en desktop (slider)
+const modalGallery = document.querySelector('.modal-gallery__background');
+const iconCloseModalBtn = document.querySelector('.modal-gallery__close');
+imgsContainer.addEventListener('click', ()=>{
+    modalGallery.style.display='grid';
+});
+
+iconCloseModalBtn.addEventListener('click', ()=>{
+    modalGallery.style.display='none';
+})
+
 // funciones 
 function drawProductAndModal(){
     productContainer.innerHTML = `<div class="cart-modal__details-container">

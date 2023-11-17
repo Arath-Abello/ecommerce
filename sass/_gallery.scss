@@ -7,6 +7,9 @@
         background-image: url('../images/image-product-1.jpg');
         background-size: cover;
         background-position-y: -35px;
+        &:hover{
+            cursor: pointer;
+        }
     }
     &__previous{
        @include mixins.image-btn(190px, 15px, false);

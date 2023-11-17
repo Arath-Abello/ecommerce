@@ -3,11 +3,9 @@
 
 .modal-gallery {
     width: 550px;
-    
     &__background {
         @include mixins.modal-background;
-        display: none;
-        // display: grid;
+
         place-content: center;
     }
 
