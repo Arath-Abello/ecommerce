@@ -108,6 +108,17 @@ iconCloseModalBtn.addEventListener('click', ()=>{
     modalGallery.style.display='none';
 })
 
+// cambiar las imagenes principales al apretar los thumbnails
+// nos dara un nodeList con todos los elementos cons esa clase (ya sabes que el nodeList es limitado en metodos)
+let thumbnails = document.querySelectorAll('.gallery__thumbnail');
+// transformamos el nodeList a un array para tener más metodos como foreach, map, etc
+thumbnails = [...thumbnails];
+thumbnails.forEach(thumbnail => {
+    thumbnail.addEventListener('click', (event)=>{
+        imgsContainer.style.backgroundImage = `url("../images/image-product-${event.target.id}.jpg")`;
+    });
+});
+
 // funciones 
 function drawProductAndModal(){
     productContainer.innerHTML = `<div class="cart-modal__details-container">
