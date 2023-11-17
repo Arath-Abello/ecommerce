@@ -41,7 +41,7 @@ addToCartBtn.addEventListener('click', () => {
     cartNotification.innerText = lastValue;
     cartNotification.style.display = 'block';
     drawProductAndModal();
-    
+
 
 });
 
@@ -59,20 +59,20 @@ cartIconBtn.addEventListener('click', () => {
 
     if (lastValue == 0) {
         productContainer.innerHTML = '<p class="cart-empty">Your cart is empty</p>';
-    }else{
+    } else {
         drawProductAndModal();
     }
 });
 
 //* borrar el contenido del carrito
-function deleteProduct(){
+function deleteProduct() {
     const deleteProductBtn = document.querySelector('.cart-modal__delete');
-    
+
     deleteProductBtn.addEventListener('click', () => {
         productContainer.innerHTML = '<p class="cart-empty">Your cart is empty</p>';
         lastValue = 0;
         cartNotification.innerText = lastValue;
-    
+
     });
 }
 
@@ -89,23 +89,23 @@ const imgsUrl = [
     '../images/image-product-4.jpg'
 ];
 
-nextGalleryBtn.addEventListener('click', ()=>{
+nextGalleryBtn.addEventListener('click', () => {
     changeNextImg(imgsContainer);
 });
 
-previousGalleryBtn.addEventListener('click', ()=>{
+previousGalleryBtn.addEventListener('click', () => {
     changePreviousImg(imgsContainer);
 });
 
 // mostrar el modal de imagenes en desktop (slider)
 const modalGallery = document.querySelector('.modal-gallery__background');
 const iconCloseModalBtn = document.querySelector('.modal-gallery__close');
-imgsContainer.addEventListener('click', ()=>{
-    modalGallery.style.display='grid';
+imgsContainer.addEventListener('click', () => {
+    modalGallery.style.display = 'grid';
 });
 
-iconCloseModalBtn.addEventListener('click', ()=>{
-    modalGallery.style.display='none';
+iconCloseModalBtn.addEventListener('click', () => {
+    modalGallery.style.display = 'none';
 })
 
 // cambiar las imagenes principales al apretar los thumbnails
@@ -114,13 +114,38 @@ let thumbnails = document.querySelectorAll('.gallery__thumbnail');
 // transformamos el nodeList a un array para tener más metodos como foreach, map, etc
 thumbnails = [...thumbnails];
 thumbnails.forEach(thumbnail => {
-    thumbnail.addEventListener('click', (event)=>{
+    thumbnail.addEventListener('click', (event) => {
         imgsContainer.style.backgroundImage = `url("../images/image-product-${event.target.id}.jpg")`;
     });
 });
 
+// cambiar las imagenes principales al apretar los thumbnails desde el modal
+let modalThumbnails = document.querySelectorAll('.modal-gallery__thumbnail');
+const modalImageContainer = document.querySelector('.modal-gallery__image-container');
+modalThumbnails = [...modalThumbnails];
+
+modalThumbnails.forEach(modalThumbnail => {
+    modalThumbnail.addEventListener('click', (event)=>{
+        // aqui los thumbnails del modal tiene como id m1, m2, etc.
+        // vamos a recortar la primera parte del id osea le removemos la m con un slice y quedaran solamente los numeros
+        modalImageContainer.style.backgroundImage = `url("../images/image-product-${event.target.id.slice(-1)}.jpg")`;
+    });
+});
+
+// cambiar imagen principal del modal con las flechas
+ const previousModalGallery = document.querySelector('.modal-gallery__previous');
+ const nextModalGallery = document.querySelector('.modal-gallery__next');
+
+ nextModalGallery.addEventListener('click', () => {
+    changeNextImg(modalImageContainer);
+});
+
+previousModalGallery.addEventListener('click', () => {
+    changePreviousImg(modalImageContainer);
+});
+
 // funciones 
-function drawProductAndModal(){
+function drawProductAndModal() {
     productContainer.innerHTML = `<div class="cart-modal__details-container">
     <img class="cart-modal__image" src="./images/image-product-1-thumbnail.jpg" alt="thumbnail">
     <div>
@@ -130,24 +155,24 @@ function drawProductAndModal(){
     <img class="cart-modal__delete" src="./images/icon-delete.svg" alt="icon delete">
   </div>
   <button class="cart-modal__checkout">Checkout</button>`;
-  deleteProduct();
-  let priceModal = document.querySelector('.cart-modal__price');
-  priceModal.innerHTML = `$125.00 x${lastValue} <span>${lastValue * 125}.00</span>`;  
+    deleteProduct();
+    let priceModal = document.querySelector('.cart-modal__price');
+    priceModal.innerHTML = `$125.00 x${lastValue} <span>${lastValue * 125}.00</span>`;
 }
 
-function changeNextImg(containerImg){
-    if(imgIndex == 4){
+function changeNextImg(containerImg) {
+    if (imgIndex == 4) {
         imgIndex = 1;
-    }else{
+    } else {
         imgIndex++;
     }
     containerImg.style.backgroundImage = `url("../images/image-product-${imgIndex}.jpg")`;
 }
 
-function changePreviousImg(containerImg){
-    if(imgIndex == 1){
+function changePreviousImg(containerImg) {
+    if (imgIndex == 1) {
         imgIndex = 4;
-    }else{
+    } else {
         imgIndex--;
     }
     containerImg.style.backgroundImage = `url("../images/image-product-${imgIndex}.jpg")`;
