@@ -101,7 +101,9 @@ previousGalleryBtn.addEventListener('click', () => {
 const modalGallery = document.querySelector('.modal-gallery__background');
 const iconCloseModalBtn = document.querySelector('.modal-gallery__close');
 imgsContainer.addEventListener('click', () => {
-    modalGallery.style.display = 'grid';
+    if(window.innerWidth >= 1115){
+        modalGallery.style.display = 'grid';
+    }
 });
 
 iconCloseModalBtn.addEventListener('click', () => {
