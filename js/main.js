@@ -144,6 +144,21 @@ previousModalGallery.addEventListener('click', () => {
     changePreviousImg(modalImageContainer);
 });
 
+// mostrar el navbar al presionar el menu hambuerguesa
+const iconMenu = document.querySelector('.header__menu');
+const modalNavbar = document.querySelector('.modal-navbar__background');
+const iconCloseNavbar = document.querySelector('.modal-navbar__close');
+iconMenu.addEventListener('click', ()=>{
+    modalNavbar.style.display='block';
+});
+
+iconCloseNavbar.addEventListener('click', ()=>{
+    modalNavbar.style.display='none';
+}); 
+
+
+
+
 // funciones 
 function drawProductAndModal() {
     productContainer.innerHTML = `<div class="cart-modal__details-container">

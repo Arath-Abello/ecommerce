@@ -311,7 +311,6 @@ body {
   height: 100%;
   padding-top: 28px;
   padding-bottom: 28px;
-  display: none;
 }
 .modal-navbar__background {
   background-color: hsla(0, 0%, 0%, 0.5);
@@ -351,7 +350,7 @@ body {
   box-shadow: 3px 3px 10px;
   position: absolute;
   top: 75px;
-  left: 6px;
+  right: 6px;
   background-color: hsl(0, 0%, 100%);
 }
 .cart-modal__title {
