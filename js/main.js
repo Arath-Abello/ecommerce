@@ -74,6 +74,27 @@ function deleteProduct(){
     });
 }
 
+// cambiar imagenes cuando se presione los botones flecha (slider)
+const imgsContainer = document.querySelector('.gallery__image-container');
+const previousGalleryBtn = document.querySelector('.gallery__previous');
+const nextGalleryBtn = document.querySelector('.gallery__next');
+let imgIndex = 1;
+
+const imgsUrl = [
+    '../images/image-product-1.jpg',
+    '../images/image-product-2.jpg',
+    '../images/image-product-3.jpg',
+    '../images/image-product-4.jpg'
+];
+
+nextGalleryBtn.addEventListener('click', ()=>{
+    changeNextImg(imgsContainer);
+});
+
+previousGalleryBtn.addEventListener('click', ()=>{
+    changePreviousImg(imgsContainer);
+});
+
 // funciones 
 function drawProductAndModal(){
     productContainer.innerHTML = `<div class="cart-modal__details-container">
@@ -87,5 +108,23 @@ function drawProductAndModal(){
   <button class="cart-modal__checkout">Checkout</button>`;
   deleteProduct();
   let priceModal = document.querySelector('.cart-modal__price');
-  priceModal.innerHTML = `$125.00 x${lastValue} <span>${lastValue * 125}.00</span>`;
+  priceModal.innerHTML = `$125.00 x${lastValue} <span>${lastValue * 125}.00</span>`;  
+}
+
+function changeNextImg(containerImg){
+    if(imgIndex == 4){
+        imgIndex = 1;
+    }else{
+        imgIndex++;
+    }
+    containerImg.style.backgroundImage = `url("../images/image-product-${imgIndex}.jpg")`;
+}
+
+function changePreviousImg(containerImg){
+    if(imgIndex == 1){
+        imgIndex = 4;
+    }else{
+        imgIndex--;
+    }
+    containerImg.style.backgroundImage = `url("../images/image-product-${imgIndex}.jpg")`;
 }
