@@ -58,6 +58,8 @@ cartIconBtn.addEventListener('click', () => {
     cartModal.classList.toggle('show');
 
     if (lastValue == 0) {
+        productContainer.innerHTML = '<p class="cart-empty">Your cart is empty</p>';
+    }else{
         drawProductAndModal();
     }
 });
